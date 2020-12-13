@@ -1,4 +1,4 @@
-![Dwm](dwm.png)
+![Dwm](https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.screenshots/dwm.png)
 
 ***Idioma***
 - 🇪🇸 Español
@@ -34,17 +34,21 @@ y scripts situados en
 
 ```bash
 # dwm & dwmblocks
-git clone https://github.com/antoniosarosi/dotfiles.git
-cp -r dotfiles/.dwm ~
-cp -r dotfiles/.config/dwmblocks ~/.config/
+cd ~/.config
+git clone https://github.com/antoniosarosi/dwm.git
+mkdir -p ~/.local/share/dwm
+ln -s ~/.config/dwm/autostart.sh ~/.local/share/dwm
 
 # scripts
-cp dotfiles/.local/bin/percentage ~/.local/bin/
-cp dotfiles/.local/bin/battery ~/.local/bin/
-cp dotfiles/.local/bin/brightness ~/.local/bin/
-cp dotfiles/.local/bin/volume ~/.local/bin/
+mkdir -p ~/.local/bin
+cd ~/.local/bin
+curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local/bin/battery" -o battery
+curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local/bin/volume" -o volume
+curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local/bin/percentage" -o percentage
+curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local/bin/brightness" -o brightness
+chmod 755 battery volume percentage brightness
 
-# Dependencias de los scripts
+# Dependencias
 sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
@@ -57,11 +61,11 @@ export PATH=$HOME/.local/bin:$PATH
 Compila *dwm* y *dwmblocks* y crea una nueva *xsession*:
 
 ```bash
-cd ~/.dwm
+cd ~/.config/dwm
 sudo make clean install
-cd ~/.config/dwmblocks/
+cd ~/.config/dwm/dwmblocks
 sudo make clean install
-sudo cp ~/.dwm/dwm.desktop /usr/share/xsessions
+sudo cp ~/.config/dwm/dwm.desktop /usr/share/xsessions
 ```
 
 Para el *autostart* abre **~/.dwm/autostart.sh**.
@@ -90,7 +94,7 @@ Después, recompila *dwmblocks* y vuelve a lanzar *dwm* con
 **mod + control + r**.
 
 ```bash
-cd ~/.config/dwmblocks
+cd ~/.config/dwm/dwmblocks
 sudo make clean install
 ```
 

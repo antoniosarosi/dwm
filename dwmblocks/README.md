@@ -1,2 +1,1 @@
-See **[dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)** for
-more info.
+See **[dwm](https://github.com/antoniosarosi/dwm)** for more info.
