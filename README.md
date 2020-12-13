@@ -1,4 +1,4 @@
-![Dwm](../.screenshots/dwm.png)
+![Dwm](dwm.png)
 
 ***Language***
 - [🇪🇸 Español](./README.es.md)
