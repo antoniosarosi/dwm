@@ -197,6 +197,7 @@ static Key keys[] = {
 
     // Screenshot
     { MODKEY, XK_s, spawn, SHCMD("scrot") },
+    { MODKEY|ShiftMask, XK_s, spawn, SHCMD("scrot -s") },
 
     // ----------------- Hardware ------------------
 
