@@ -26,40 +26,61 @@ static const char dmenufont[] = "UbuntuMono Nerd Font:size=12:antialias=true:aut
 
 // ---------------------------------- Colors -----------------------------------
 
+struct Theme {
+    char *inactive;
+    char *active;
+    char *bg;
+    char *focus;
+};
+
+static const struct Theme material = {
+    .inactive = "#4c566a",
+    .active = "#ffffff",
+    .bg = "#0f101a",
+    .focus = "#a151d3"
+};
+
+static const struct Theme onedark = {
+    .inactive = "#4c566a",
+    .active = "#ffffff",
+    .bg = "#1e2127",
+    .focus = "#E06C75"
+};
+
+static const struct Theme nord = {
+    .inactive = "#4c566a",
+    .active = "#ffffff",
+    .bg = "#2e3440",
+    .focus = "#81a1c1"
+};
+
+static const struct Theme monokai_pro = {
+    .inactive = "#727072",
+    .active = "#2d2a2e",
+    .bg = "#2d2a2e",
+    .focus = "#a9dc76"
+}; 
+
 static const char window_border[] = "#000000";
-static const char inactive[] = "#4c566a";
-static const char active[] = "#ffffff";
-
-static const char material_bg[] = "#0f101a";
-static const char material_focus[] = "#a151d3";
-
-static const char onedark_bg[] = "#1e2127";
-static const char onedark_focus[] = "#E06C75";
-
-static const char nord_bg[] = "#2e3440";
-static const char nord_focus[] = "#81a1c1";
-
-static const char monokai_pro_bg[] = "#2d2a2e";
-static const char monokai_pro_focus[] = "#a9dc76";
 
 static const char *colors[][3] = {
-    // fg        bg         border   
-    { inactive, material_bg, window_border },
-    { active, material_focus,  material_focus  },
+    // fg                 bg             border   
+    { material.inactive, material.bg, window_border },
+    { material.active, material.focus,  material.focus  },
 
-    { inactive, onedark_bg, window_border },
-    { active, onedark_focus,  onedark_focus  },
-    
-    { inactive, nord_bg, window_border },
-    { active, nord_focus,  nord_focus  },
+    { onedark.inactive, onedark.bg, window_border },
+    { onedark.active, onedark.focus,  onedark.focus  },
 
-    { inactive, monokai_pro_bg, window_border },
-    { active, monokai_pro_focus,  monokai_pro_focus  },
+    { nord.inactive, nord.bg, window_border },
+    { nord.active, nord.focus,  nord.focus  },
+
+    { monokai_pro.inactive, monokai_pro.bg, window_border },
+    { monokai_pro.active, monokai_pro.focus,  monokai_pro.focus },
 };
 
 // -------------------------------- Workspaces ---------------------------------
 
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " ", "  ", " ", " ", " " };
 
 static const Rule rules[] = {
     /* xprop(1):
