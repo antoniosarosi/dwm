@@ -39,7 +39,10 @@ static const char onedark_focus[] = "#E06C75";
 static const char nord_bg[] = "#2e3440";
 static const char nord_focus[] = "#81a1c1";
 
-static const char *colors[][3]      = {
+static const char monokai_pro_bg[] = "#2d2a2e";
+static const char monokai_pro_focus[] = "#a9dc76";
+
+static const char *colors[][3] = {
     // fg        bg         border   
     { inactive, material_bg, window_border },
     { active, material_focus,  material_focus  },
@@ -49,6 +52,9 @@ static const char *colors[][3]      = {
     
     { inactive, nord_bg, window_border },
     { active, nord_focus,  nord_focus  },
+
+    { inactive, monokai_pro_bg, window_border },
+    { active, monokai_pro_focus,  monokai_pro_focus  },
 };
 
 // -------------------------------- Workspaces ---------------------------------
