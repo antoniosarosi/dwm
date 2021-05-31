@@ -48,11 +48,11 @@ curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local
 curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local/bin/brightness" -o brightness
 chmod 755 battery volume percentage brightness
 
-# Diese scripts haben
+# Diese scripts haben Abhängigkeiten
 sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
-Schreibe das in deine **~/.xprofile** Datei:
+Schreibe das in **~/.xprofile**:
 
 ```bash
 export PATH=$HOME/.local/bin:$PATH
@@ -76,8 +76,8 @@ Xephyr -br -ac -noreset -screen 1280x720 :1 &
 DISPLAY=:1 dwm
 ```
 
-If you want to modify bar icons, open **~/.config/dwmblocks/config.h**
-and change these lines:
+Wenn du die bar bearbeiten willst öffne diese **~/.config/dwmblocks/config.h**
+und aendere Zeilen code
 
 ```cpp
 static const Block blocks[] = {
@@ -90,15 +90,12 @@ static const Block blocks[] = {
 };
 ```
 
-Then recompile *dwmblocks* and restart *dwm* using **mod + control + r**.
+Dann recompile *dwmblocks* und starte *dwm* neu mit **mod + control + r**.
 
 ```bash
 cd ~/.config/dwm/dwmblocks
 sudo make clean install
 ```
 
-Once that's done, you can login. But keep in mind keybindings will not work
-unless you have the same programs that I use and the same configs. You can
-either change keybindings or install the software I use and my config files,
-check out [my dotfiles repo](https://github.com/antoniosarosi/dotfiles#keybindings)
-for instructions.
+Wenn das vertig ist kannst du dich einloggen. Aber vergiss nicht, nicht, nicht alle Tastenkombinationen werden funktionieren wenn du nicht die gleichen Programme die ich benutze installiert hat.
+schau dir mal [mein dotfiles repo](https://github.com/antoniosarosi/dotfiles#keybindings).
