@@ -2,7 +2,7 @@
 
 ***Language***
 - [🇪🇸 Español](./README.es.md)
-- Deutsch
+- 🇩🇪 Deutsch
 - [🇺🇸 English](README.md)
 
 Meine eigene gepatchte Version von DWM **[dwm](https://dwm.suckless.org/)**.
