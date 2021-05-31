@@ -2,12 +2,12 @@
 
 ***Language***
 - [🇪🇸 Español](./README.es.md)
-- 🇺🇸 English
-- [🇩🇪 Deutsch](./README.de.md)
+- 🇩🇪 Deutsch
+- [🇺🇸 English](README.md)
 
-My custom and patched build of **[dwm](https://dwm.suckless.org/)**.
+Meine eigene gepatchte Version von DWM **[dwm](https://dwm.suckless.org/)**.
 
-Patches:
+Meine Patches:
 - [autostart](https://dwm.suckless.org/patches/autostart/dwm-autostart-20200610-cb3f58a.diff)
 - [restartsig](https://dwm.suckless.org/patches/restartsig/dwm-restartsig-20180523-6.2.diff)
 - [attachaside](https://dwm.suckless.org/patches/attachaside/dwm-attachaside-6.1.diff)
@@ -22,17 +22,15 @@ Patches:
 - [pertag](https://dwm.suckless.org/patches/pertag/)
 - [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff)
 
-To install this on your system, first you need the following dependencies:
-
+Um dwm auf deinem system installieren musst du diese Abhängigkeiten installieren:
 ```bash
 yay -S nerd-fonts-ubuntu-mono
 ```
-
-I always use that font for icons.
-You will also need my custom
+Ich nutze immer die Schriftart und icons.
+Du baurachst auch meine eigene Version von 
 **[dwmblocks](https://github.com/antoniosarosi/dwm/tree/master/dwmblocks)**
-and **[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**
-scripts.
+und die **[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**
+Scripts.
 
 ```bash
 # dwm & dwmblocks
@@ -50,17 +48,17 @@ curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local
 curl -sL "https://raw.githubusercontent.com/antoniosarosi/dotfiles/master/.local/bin/brightness" -o brightness
 chmod 755 battery volume percentage brightness
 
-# These scripts have some dependencies
+# Diese scripts haben Abhängigkeiten
 sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
-Place this in your **~/.xprofile**:
+Schreibe das in **~/.xprofile**:
 
 ```bash
 export PATH=$HOME/.local/bin:$PATH
 ```
 
-Build *dwm* and *dwmblocks* and create a new *xsession*:
+Erstelle *dwm* und *dwmblocks* und erstelle eine neue *xsession*:
 
 ```bash
 cd ~/.config/dwm
@@ -70,16 +68,16 @@ sudo make clean install
 sudo cp ~/.config/dwm/dwm.desktop /usr/share/xsessions
 ```
 
-For *autostart*, check **~/.dwm/autostart.sh**.
-Test it with **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
+Die *autostart* Datei befindet sich in **~/.dwm/autostart.sh**.
+Teste es mitTest it with **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
 
 ```bash
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
 DISPLAY=:1 dwm
 ```
 
-If you want to modify bar icons, open **~/.config/dwmblocks/config.h**
-and change these lines:
+Wenn du die bar bearbeiten willst öffne diese **~/.config/dwmblocks/config.h**
+und aendere Zeilen code
 
 ```cpp
 static const Block blocks[] = {
@@ -92,15 +90,12 @@ static const Block blocks[] = {
 };
 ```
 
-Then recompile *dwmblocks* and restart *dwm* using **mod + control + r**.
+Dann recompile *dwmblocks* und starte *dwm* neu mit **mod + control + r**.
 
 ```bash
 cd ~/.config/dwm/dwmblocks
 sudo make clean install
 ```
 
-Once that's done, you can login. But keep in mind keybindings will not work
-unless you have the same programs that I use and the same configs. You can
-either change keybindings or install the software I use and my config files,
-check out [my dotfiles repo](https://github.com/antoniosarosi/dotfiles#keybindings)
-for instructions.
+Wenn das vertig ist kannst du dich einloggen. Aber vergiss nicht, nicht, nicht alle Tastenkombinationen werden funktionieren wenn du nicht die gleichen Programme die ich benutze installiert hat.
+schau dir mal [mein dotfiles repo](https://github.com/antoniosarosi/dotfiles#keybindings).

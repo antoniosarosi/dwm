@@ -3,6 +3,7 @@
 ***Idioma***
 - 🇪🇸 Español
 - [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
+- [🇩🇪 Deutsch](./README.de.md)
 
 Mi versión personalizada de **[dwm](https://dwm.suckless.org/)**.
 
