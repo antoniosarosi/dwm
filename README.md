@@ -4,6 +4,7 @@
 - [🇪🇸 Español](./README.es.md)
 - 🇺🇸 English
 - [Deutsch](./README.de.md)
+
 My custom and patched build of **[dwm](https://dwm.suckless.org/)**.
 
 Patches:
